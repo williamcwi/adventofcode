@@ -32,4 +32,24 @@ for i, line in enumerate(lines):
 
 print('Part 1 Answer: {}'.format(answer))
 
-# print('Part 2 Answer: {}'.format(answer))
+answer = 0
+
+for line in lines:
+    maxRed = 0
+    for y in re.findall(r'\d+ red',line):
+        temp = int(re.sub(r'[a-zA-Z ]',"",y))
+        if(temp > maxRed):
+            maxRed = temp
+    maxGreen = 0
+    for y in re.findall(r'\d+ green',line):
+        temp = int(re.sub(r'[a-zA-Z ]',"",y))
+        if(temp > maxGreen):
+            maxGreen = temp
+    maxBlue = 0
+    for y in re.findall(r'\d+ blue',line):
+        temp = int(re.sub(r'[a-zA-Z ]',"",y))
+        if(temp > maxBlue):
+            maxBlue = temp
+    answer += maxRed*maxGreen*maxBlue
+
+print('Part 2 Answer: {}'.format(answer))
