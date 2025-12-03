@@ -1,6 +1,11 @@
-import sys
+import os
 
-lines = [line.strip() for line in sys.stdin.read().splitlines()]
+ROOT_DIR = os.path.abspath('./')
+INPUT_DIR = os.path.join(ROOT_DIR, 'inputs')
+
+input_file = os.path.join(INPUT_DIR,'secret_entrance.txt')
+with open(input_file, 'r', encoding='UTF-8') as f:
+    lines = f.read().splitlines()
 
 p1 = 0
 p2 = 0
